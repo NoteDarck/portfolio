@@ -146,18 +146,13 @@ const Index = () => {
           <h2 className="text-3xl font-bold mb-6 text-cyan-400">Contato</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-blue-600 hover:bg-blue-700">
-              <a href="mailto:contato@notedarckbr.com" className="flex items-center">
+              <a href="mailto:gabrielmcoenga@gmail.com" className="flex items-center">
                 <Code className="mr-2" /> Email
               </a>
             </Button>
             <Button className="bg-purple-600 hover:bg-purple-700">
               <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <GitBranch className="mr-2" /> GitHub
-              </a>
-            </Button>
-            <Button className="bg-green-600 hover:bg-green-700">
-              <a href="https://linkedin.com/in/notedarckbr" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                <GraduationCap className="mr-2" /> LinkedIn
               </a>
             </Button>
           </div>
