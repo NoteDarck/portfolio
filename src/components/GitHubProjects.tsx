@@ -19,6 +19,43 @@ interface Repository {
   visibility: string;
 }
 
+// Projetos de fallback caso a API falhe
+const fallbackProjects: Repository[] = [
+  {
+    id: 1,
+    name: "Portfólio Pessoal",
+    description: "Meu portfólio pessoal mostrando meus projetos e habilidades",
+    html_url: "https://github.com/NoteDarckBr/portfolio",
+    stargazers_count: 5,
+    language: "TypeScript",
+    fork: false,
+    updated_at: new Date().toISOString(),
+    visibility: "public"
+  },
+  {
+    id: 2,
+    name: "Sistema de Gestão",
+    description: "Sistema de gestão completo com React e Node.js",
+    html_url: "https://github.com/NoteDarckBr/gestao-sistema",
+    stargazers_count: 8,
+    language: "JavaScript",
+    fork: false,
+    updated_at: new Date().toISOString(),
+    visibility: "public"
+  },
+  {
+    id: 3,
+    name: "App Mobile",
+    description: "Aplicativo mobile desenvolvido com React Native",
+    html_url: "https://github.com/NoteDarckBr/app-mobile",
+    stargazers_count: 3,
+    language: "JavaScript",
+    fork: false,
+    updated_at: new Date().toISOString(),
+    visibility: "public"
+  }
+];
+
 export const GitHubProjects = () => {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
@@ -44,8 +81,10 @@ export const GitHubProjects = () => {
         setRepos(filteredRepos);
         setError(null);
       } catch (err) {
-        setError('Não foi possível carregar os projetos do GitHub');
         console.error('Error fetching GitHub repos:', err);
+        setError('Não foi possível carregar os projetos do GitHub');
+        // Usar projetos de fallback
+        setRepos(fallbackProjects);
       } finally {
         setLoading(false);
       }
@@ -86,61 +125,64 @@ export const GitHubProjects = () => {
     );
   }
 
-  if (error) {
-    return (
-      <Card className="bg-gray-800 border-gray-700">
-        <CardContent className="pt-6 text-center">
-          <p className="text-gray-300 mb-4">{error}</p>
-          <Button className="bg-purple-600 hover:bg-purple-700">
-            <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
-              <GitBranch className="mr-2" /> Ver projetos no GitHub
-            </a>
-          </Button>
-        </CardContent>
-      </Card>
-    );
-  }
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {repos.map((repo) => (
-        <Card key={repo.id} className="bg-gray-800 border-gray-700 hover:border-purple-500 transition-all">
-          <CardHeader>
-            <div className="flex justify-between items-start">
-              <CardTitle className="text-purple-400">
-                <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {repo.name}
-                </a>
-              </CardTitle>
-              <Badge variant="secondary" className="bg-yellow-900 text-yellow-200">
-                {repo.visibility}
-              </Badge>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-300 text-sm mb-4">
-              {repo.description || 'Sem descrição disponível'}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {repo.language && (
-                <Badge variant="secondary" className="bg-blue-900 text-blue-200">
-                  {repo.language}
+    <div>
+      {error && (
+        <div className="mb-6 p-4 bg-yellow-900/50 border border-yellow-700 rounded-lg">
+          <p className="text-yellow-200 flex items-center">
+            <Eye className="mr-2" /> {error}. Mostrando projetos de exemplo.
+          </p>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {repos.map((repo) => (
+          <Card key={repo.id} className="bg-gray-800 border-gray-700 hover:border-purple-500 transition-all">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <CardTitle className="text-purple-400">
+                  <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    {repo.name}
+                  </a>
+                </CardTitle>
+                <Badge variant="secondary" className="bg-yellow-900 text-yellow-200">
+                  {repo.visibility}
                 </Badge>
-              )}
-            </div>
-            <div className="flex justify-between items-center text-sm text-gray-400">
-              <div className="flex items-center">
-                <Star className="w-4 h-4 mr-1 text-yellow-400" />
-                <span>{repo.stargazers_count}</span>
               </div>
-              <div className="flex items-center">
-                <Code className="w-4 h-4 mr-1 text-blue-400" />
-                <span>{formatDate(repo.updated_at)}</span>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-300 text-sm mb-4">
+                {repo.description || 'Sem descrição disponível'}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {repo.language && (
+                  <Badge variant="secondary" className="bg-blue-900 text-blue-200">
+                    {repo.language}
+                  </Badge>
+                )}
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+              <div className="flex justify-between items-center text-sm text-gray-400">
+                <div className="flex items-center">
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                  <span>{repo.stargazers_count}</span>
+                </div>
+                <div className="flex items-center">
+                  <Code className="w-4 h-4 mr-1 text-blue-400" />
+                  <span>{formatDate(repo.updated_at)}</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      <div className="text-center mt-8">
+        <Button className="bg-purple-600 hover:bg-purple-700">
+          <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <GitBranch className="mr-2" /> Ver todos os projetos no GitHub
+          </a>
+        </Button>
+      </div>
     </div>
   );
 };
