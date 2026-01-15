@@ -51,23 +51,12 @@ const Index = () => {
           <div className="space-y-4">
             <Card className="bg-gray-800 border-gray-700">
               <CardHeader>
-                <CardTitle className="text-green-400">Bacharelado em Ciência da Computação</CardTitle>
-                <CardDescription className="text-gray-400">Universidade Federal de Tecnologia</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">2018 - 2022</p>
-                <p className="text-gray-300 mt-2">Formação completa em desenvolvimento de software, algoritmos, estruturas de dados e engenharia de software.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700">
-              <CardHeader>
-                <CardTitle className="text-blue-400">Curso Técnico em Informática</CardTitle>
-                <CardDescription className="text-gray-400">Escola Técnica Estadual</CardDescription>
+                <CardTitle className="text-green-400">Técnico em Informática Integrado ao Ensino Médio</CardTitle>
+                <CardDescription className="text-gray-400">Instituto Federal de Mato Grosso do Sul (IFMS)</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">2015 - 2017</p>
-                <p className="text-gray-300 mt-2">Fundamentos de programação, redes de computadores e manutenção de hardware.</p>
+                <p className="text-gray-300 mt-2">Formação técnica com foco em desenvolvimento de software, redes de computadores, manutenção de hardware e fundamentos de programação.</p>
               </CardContent>
             </Card>
           </div>
