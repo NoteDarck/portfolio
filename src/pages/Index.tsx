@@ -5,6 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Code, GraduationCap, Smartphone, Database, Globe, GitBranch, Briefcase, Award, BookOpen, Star } from "lucide-react";
+import { GitHubProjects } from "@/components/GitHubProjects";
 
 const Index = () => {
   return (
@@ -137,20 +138,15 @@ const Index = () => {
             <GitBranch className="mr-2" /> Meus Projetos no GitHub
           </h2>
 
-          <Card className="bg-gray-800 border-gray-700">
-            <CardContent className="pt-6">
-              <p className="text-gray-300 mb-4">
-                Você pode ver todos os meus projetos públicos no GitHub. Aqui estão alguns destaques:
-              </p>
-              <div className="text-center">
-                <Button className="bg-purple-600 hover:bg-purple-700">
-                  <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                    <GitBranch className="mr-2" /> Ver todos os projetos no GitHub
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <GitHubProjects />
+
+          <div className="text-center mt-8">
+            <Button className="bg-purple-600 hover:bg-purple-700">
+              <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <GitBranch className="mr-2" /> Ver todos os projetos no GitHub
+              </a>
+            </Button>
+          </div>
         </div>
 
         {/* Seção Contato */}
