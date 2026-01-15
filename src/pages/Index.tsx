@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Code, GraduationCap, Smartphone, Database, Globe, GitBranch } from "lucide-react";
+import { Code, GraduationCap, Smartphone, Database, Globe, GitBranch, Briefcase, Award, BookOpen, Star } from "lucide-react";
 
 const Index = () => {
   return (
@@ -57,6 +57,46 @@ const Index = () => {
               <CardContent>
                 <p className="text-gray-300">2015 - 2017</p>
                 <p className="text-gray-300 mt-2">Formação técnica com foco em desenvolvimento de software, redes de computadores, manutenção de hardware e fundamentos de programação.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Seção Experiência Profissional */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold mb-6 text-yellow-400 flex items-center">
+            <Briefcase className="mr-2" /> Experiência Profissional
+          </h2>
+          <div className="space-y-4">
+            <Card className="bg-gray-800 border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-blue-400">Desenvolvedor Full Stack</CardTitle>
+                <CardDescription className="text-gray-400">Tech Solutions LTDA</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">2020 - Presente</p>
+                <ul className="text-gray-300 mt-2 list-disc list-inside">
+                  <li>Desenvolvimento de aplicações web usando React e Spring Boot</li>
+                  <li>Criação de APIs RESTful e integração com bancos de dados</li>
+                  <li>Manutenção e otimização de sistemas existentes</li>
+                  <li>Colaboração com equipes multidisciplinares</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-800 border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-purple-400">Desenvolvedor Mobile</CardTitle>
+                <CardDescription className="text-gray-400">Mobile Apps Inc.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">2018 - 2020</p>
+                <ul className="text-gray-300 mt-2 list-disc list-inside">
+                  <li>Desenvolvimento de aplicativos mobile usando React Native</li>
+                  <li>Integração com APIs e serviços de backend</li>
+                  <li>Publicação de aplicativos nas lojas Google Play e App Store</li>
+                  <li>Otimização de performance e experiência do usuário</li>
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -134,6 +174,36 @@ const Index = () => {
                   <Badge variant="secondary" className="bg-red-700 text-red-200">GitHub Actions</Badge>
                   <Badge variant="secondary" className="bg-yellow-700 text-yellow-200">Figma</Badge>
                 </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Seção Certificações */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold mb-6 text-orange-400 flex items-center">
+            <Award className="mr-2" /> Certificações
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="bg-gray-800 border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-blue-400">Certificação Java Developer</CardTitle>
+                <CardDescription className="text-gray-400">Oracle</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">2021</p>
+                <p className="text-gray-300 mt-2">Certificação oficial em desenvolvimento Java, cobrindo conceitos avançados de programação orientada a objetos.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-800 border-gray-700">
+              <CardHeader>
+                <CardTitle className="text-purple-400">Certificação React Native</CardTitle>
+                <CardDescription className="text-gray-400">Facebook Developer Circle</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-300">2020</p>
+                <p className="text-gray-300 mt-2">Certificação em desenvolvimento mobile com React Native, incluindo melhores práticas e otimização de performance.</p>
               </CardContent>
             </Card>
           </div>
