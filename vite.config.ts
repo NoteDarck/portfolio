@@ -4,7 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(({ mode }) => ({
-  // Configuração para GitHub Pages
+  // Para desenvolvimento local, usamos base "/"
+  // Para produção, usamos o nome do repositório
   base: mode === 'production' ? "/meu-portfolio/" : "/",
   server: {
     host: "::",
@@ -19,7 +20,9 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    // Garantir que os assets sejam gerados corretamente
     assetsDir: "assets",
+    // Desabilitar minificação para debug (opcional)
     minify: mode === 'production' ? 'terser' : false,
   }
 }));
