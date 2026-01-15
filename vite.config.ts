@@ -4,8 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(({ mode }) => ({
-  // Configuração corrigida para GitHub Pages
-  base: mode === 'production' ? "/meu-portfolio/" : "/",
+  // Configuração corrigida para GitHub Pages - repositório portfolio
+  base: mode === 'production' ? "/portfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
