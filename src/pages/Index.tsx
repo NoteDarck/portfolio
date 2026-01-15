@@ -14,17 +14,19 @@ const Index = () => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <Avatar className="w-32 h-32 mb-6">
-              <AvatarImage src="/placeholder.svg" alt="Profile" />
-              <AvatarFallback>JP</AvatarFallback>
+              <AvatarImage src="/placeholder.svg" alt="Carlos Gabriel" />
+              <AvatarFallback>CG</AvatarFallback>
             </Avatar>
-            <h1 className="text-4xl font-bold mb-4">João Pedro</h1>
+            <h1 className="text-4xl font-bold mb-4">Carlos Gabriel Martins Coenga</h1>
             <p className="text-xl text-muted-foreground mb-6">Frontend Developer</p>
             <div className="flex gap-4 mb-8">
-              <Button variant="outline" size="icon">
-                <Linkedin className="h-4 w-4" />
+              <Button variant="outline" size="icon" asChild>
+                <a href="https://github.com/NoteDarck" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-4 w-4" />
+                </a>
               </Button>
               <Button variant="outline" size="icon">
-                <Github className="h-4 w-4" />
+                <Linkedin className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="icon">
                 <Mail className="h-4 w-4" />
