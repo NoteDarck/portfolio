@@ -93,7 +93,6 @@ const Index = () => {
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="bg-cyan-900 text-cyan-200">React Native</Badge>
                   <Badge variant="secondary" className="bg-blue-800 text-blue-200">React.js</Badge>
-                  <Badge variant="secondary" className="bg-purple-900 text-purple-200">Spring Boot</Badge>
                   <Badge variant="secondary" className="bg-green-900 text-green-200">Node.js</Badge>
                 </div>
               </CardContent>
@@ -110,7 +109,6 @@ const Index = () => {
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="bg-orange-900 text-orange-200">MySQL</Badge>
                   <Badge variant="secondary" className="bg-green-800 text-green-200">PostgreSQL</Badge>
-                  <Badge variant="secondary" className="bg-red-900 text-red-200">Firebase</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -126,8 +124,6 @@ const Index = () => {
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="bg-gray-700 text-gray-200">Git</Badge>
                   <Badge variant="secondary" className="bg-blue-700 text-blue-200">Docker</Badge>
-                  <Badge variant="secondary" className="bg-purple-700 text-purple-200">AWS</Badge>
-                  <Badge variant="secondary" className="bg-red-700 text-red-200">GitHub Actions</Badge>
                   <Badge variant="secondary" className="bg-yellow-700 text-yellow-200">Figma</Badge>
                 </div>
               </CardContent>
@@ -135,43 +131,26 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Seção Projetos */}
+        {/* Seção Projetos do GitHub */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-orange-400 flex items-center">
-            <GitBranch className="mr-2" /> Projetos Recentes
+            <GitBranch className="mr-2" /> Meus Projetos no GitHub
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="bg-gray-800 border-gray-700">
-              <CardHeader>
-                <CardTitle className="text-blue-400">App de Delivery</CardTitle>
-                <CardDescription className="text-gray-400">React Native + Firebase</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Aplicativo mobile para delivery de alimentos com sistema de pagamento integrado e rastreamento em tempo real.</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <Badge variant="secondary" className="bg-blue-900 text-blue-200">React Native</Badge>
-                  <Badge variant="secondary" className="bg-red-900 text-red-200">Firebase</Badge>
-                  <Badge variant="secondary" className="bg-green-900 text-green-200">TypeScript</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700">
-              <CardHeader>
-                <CardTitle className="text-purple-400">Sistema de Gestão</CardTitle>
-                <CardDescription className="text-gray-400">Spring Boot + React</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300">Plataforma web para gestão empresarial com autenticação JWT, relatórios e dashboard analítico.</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <Badge variant="secondary" className="bg-purple-900 text-purple-200">Spring Boot</Badge>
-                  <Badge variant="secondary" className="bg-blue-800 text-blue-200">React</Badge>
-                  <Badge variant="secondary" className="bg-orange-900 text-orange-200">MySQL</Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <Card className="bg-gray-800 border-gray-700">
+            <CardContent className="pt-6">
+              <p className="text-gray-300 mb-4">
+                Você pode ver todos os meus projetos públicos no GitHub. Aqui estão alguns destaques:
+              </p>
+              <div className="text-center">
+                <Button className="bg-purple-600 hover:bg-purple-700">
+                  <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    <GitBranch className="mr-2" /> Ver todos os projetos no GitHub
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Seção Contato */}
