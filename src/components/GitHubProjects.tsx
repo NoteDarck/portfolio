@@ -82,7 +82,7 @@ export const GitHubProjects = () => {
         setError(null);
       } catch (err) {
         console.error('Error fetching GitHub repos:', err);
-        setError('Não foi possível carregar os projetos do GitHub');
+        setError('Não foi possível carregar os projetos do GitHub. Mostrando projetos de exemplo.');
         // Usar projetos de fallback
         setRepos(fallbackProjects);
       } finally {
@@ -130,7 +130,7 @@ export const GitHubProjects = () => {
       {error && (
         <div className="mb-6 p-4 bg-yellow-900/50 border border-yellow-700 rounded-lg">
           <p className="text-yellow-200 flex items-center">
-            <Eye className="mr-2" /> {error}. Mostrando projetos de exemplo.
+            <Eye className="mr-2" /> {error}
           </p>
         </div>
       )}
@@ -174,14 +174,6 @@ export const GitHubProjects = () => {
             </CardContent>
           </Card>
         ))}
-      </div>
-
-      <div className="text-center mt-8">
-        <Button className="bg-purple-600 hover:bg-purple-700">
-          <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
-            <GitBranch className="mr-2" /> Ver todos os projetos no GitHub
-          </a>
-        </Button>
       </div>
     </div>
   );

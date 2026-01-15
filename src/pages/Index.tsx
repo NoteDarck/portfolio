@@ -139,14 +139,6 @@ const Index = () => {
           </h2>
 
           <GitHubProjects />
-
-          <div className="text-center mt-8">
-            <Button className="bg-purple-600 hover:bg-purple-700">
-              <a href="https://github.com/NoteDarckBr" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                <GitBranch className="mr-2" /> Ver todos os projetos no GitHub
-              </a>
-            </Button>
-          </div>
         </div>
 
         {/* Seção Contato */}
