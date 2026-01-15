@@ -3,8 +3,10 @@ import dyadComponentTagger from "@dyad-sh/react-vite-component-tagger";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-export default defineConfig(() => ({
-  base: "/", // This will be updated when deploying to GitHub Pages
+export default defineConfig(({ mode }) => ({
+  // Para GitHub Pages, usamos o nome do repositório como base
+  // Mude "meu-portfolio" para o nome do seu repositório
+  base: mode === 'production' ? "/meu-portfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
